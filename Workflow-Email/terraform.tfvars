@@ -1,0 +1,12 @@
+name = "my-notification-policy"
+incident_preference = "PER_POLICY"
+name_condition = "my-notification-condition"
+type = "static"
+enabled = true
+description = "i have nrql for CPU percentage if goes form 70%"
+name_destination = "my-destination-notification"
+destination_type = "EMAIL"
+name_channel = "my-notification-channel"
+channel_type = "EMAIL"
+name_workflow = "my-workflow"
+muting_rules_handling = "NOTIFY_ALL_ISSUES"
