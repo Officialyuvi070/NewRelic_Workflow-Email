@@ -15,11 +15,11 @@ resource "newrelic_nrql_alert_condition" "workflow-condition" {
   description    = var.description
 
   nrql {
-    query = "SELECT average(cpuPercent) FROM SystemSample WHERE cpuPercent > 50"
+    query = "SELECT average(host.cpuPercent) AS 'CPU used %' FROM Metric WHERE `entityGuid` = 'NDIxMDM4OHxJTkZSQXxOQXw2MDQyNjMwMTQ2ODg0MjU3OTYx'"
   }
   warning {
     operator              = "above"
-    threshold             = 3.5
+    threshold             = 5
     threshold_duration    = 60
     threshold_occurrences = "ALL"
   }
